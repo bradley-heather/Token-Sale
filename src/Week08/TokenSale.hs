@@ -159,7 +159,5 @@ useEndpoints :: TokenSale -> Contract () TSUseSchema Text ()
 useEndpoints ts = forever
                 $ handleError logError
                 $ awaitPromise
-                $ interact' 
-  where
-    interact'  = endpoint @"interact"  $ interact ts
+                $ endpoint @"interact"  $ interact ts
     
