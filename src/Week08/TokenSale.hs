@@ -87,7 +87,7 @@ transition ts s r = case (stateValue s, stateData s, r) of
                                                       assetClassValue (tsToken ts) (negate n) <>
                                                       lovelaceValueOf (negate l)
                                                     )
-    (_, Trade _, Close)                           -> Just  ( Constraints.mustBeSignedBy (tsSeller ts)
+    (v, Trade p, Close)                           -> Just  ( Constraints.mustBeSignedBy (tsSeller ts)
                                                     , State Finished mempty
                                                     )
     _                                       -> Nothing
