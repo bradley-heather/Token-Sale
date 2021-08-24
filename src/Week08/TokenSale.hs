@@ -99,7 +99,7 @@ final _        = False
 
 {-# INLINABLE tsStateMachine #-}
 tsStateMachine :: TokenSale -> StateMachine TradeDatum TSRedeemer
-tsStateMachine ts = mkStateMachine (tsTT ts) (transition ts) (final)
+tsStateMachine ts = mkStateMachine (tsTT ts) (transition ts) (final) -- final sepcifies final state of the state machine
 
 {-# INLINABLE mkTSValidator #-}
 mkTSValidator :: TokenSale -> TradeDatum -> TSRedeemer -> ScriptContext -> Bool
