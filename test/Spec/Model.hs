@@ -141,7 +141,7 @@ instance ContractModel TSModel where
                          deposit w $ lovelaceValueOf allLL <> assetClassValue (tokens Map.! w) allTokens
                          (tsModel . ix v . tssLovelace) $~ (+ (- allLL ))
                          (tsModel . ix v . tssToken) $~ (+ (- allTokens ))
-                         (tsModel . at w) $= Nothing
+                         (tsModel . at w) $= Nothing -- End state
 
                  _ -> return () 
         wait 1
